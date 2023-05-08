@@ -1,13 +1,11 @@
 import { Routes, Route } from "react-router";
 
-import Dashboard from "../../screens/dashboard/index.jsx";
+import Dashboard from "../../screens/Dashboard/index.jsx";
 
-function Content() {
+export default function Content() {
   return (
     <Routes>
         <Route path="/" Component={Dashboard} exact></Route>
     </Routes>
   );
 }
-
-export default Content;
