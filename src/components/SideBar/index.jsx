@@ -4,7 +4,6 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -17,13 +16,11 @@ import { drawerWidth } from '../../constants'
 export default function SideBar() {
    const theme = useTheme();
    const [selectedPath, setselectedPath] = React.useState('/');
-   console.log(selectedPath)
 
    const handleListItemClick = (event, index) => {
       setselectedPath(index);
    };
 
-   console.log(theme.palette)
    return (
    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -44,7 +41,7 @@ export default function SideBar() {
             fontWeight: 'bolder', 
             padding: '1.5rem 16px', 
             color: theme.palette.primary.main,
-            fontSize: '2rem'
+            fontSize: '32px',
             }}>GAT</Typography>
         <Typography variant='p' sx={{fontWeight: 'bolder', padding: '0px 16px', color: theme.palette.text.primary}}>Menu</Typography>
         <List>
@@ -60,7 +57,7 @@ export default function SideBar() {
             </ListItem>
           ))}
         </List>
-        <Divider />
+        <Typography variant='p' sx={{fontWeight: 'bolder', padding: '16px 16px 0px 16px', color: theme.palette.text.primary}}>Other</Typography>
         <List>
           {otherMenuData.map((val, key) => (
             <ListItem key={key} disablePadding>
