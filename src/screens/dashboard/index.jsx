@@ -1,10 +1,17 @@
-import { Container, Typography } from "@mui/material";
+import { Typography, Box, Link } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 function Dashboard() {
+  const theme = useTheme();
   return (
-    <Container>
-        <Typography>Dashboard</Typography>
-    </Container>
+    <Box>
+        <Typography variant="h6">Hello, Shanks</Typography>
+        <Typography variant="p" sx={{color: theme.palette.primary.disabled, fontSize: '.9rem'}}>
+          You have 
+          <Link href="#" underline="none"> 5 notifications</Link>
+        </Typography>
+        
+    </Box>
   );
 }
 

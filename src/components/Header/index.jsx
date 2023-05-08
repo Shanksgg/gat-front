@@ -85,11 +85,11 @@ export default function Header() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                     >
-                    {settings.map((setting) => (
-                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                        </MenuItem>
-                    ))}
+                        {settings.map((setting) => (
+                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                <Typography textAlign="center">{setting}</Typography>
+                            </MenuItem>
+                        ))}
                     </Menu>
                 </Box>
             </Toolbar>

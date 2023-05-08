@@ -43,11 +43,11 @@ export default function SideBar() {
             color: theme.palette.primary.main,
             fontSize: '32px',
             }}>GAT</Typography>
-        <Typography variant='p' sx={{fontWeight: 'bolder', padding: '0px 16px', color: theme.palette.text.primary}}>Menu</Typography>
-        <List>
+        <Typography variant='p' sx={{fontWeight: 'bolder', padding: '0px 24px', color: theme.palette.text.primary}}>Menu</Typography>
+        <List sx={{mx: '16px' }}>
           {mainMenuData.map((val, key) => (
             <ListItem key={key} disablePadding>
-              <ListItemButton selected={selectedPath === val.path}
+              <ListItemButton selected={selectedPath === val.path} sx={{borderRadius: '6px'}}
                   onClick={(event) => handleListItemClick(event, val.path)}>
                 <ListItemIcon sx={{color: selectedPath === val.path ? theme.palette.primary.main : ''}}>
                   {val.icon}
@@ -57,11 +57,11 @@ export default function SideBar() {
             </ListItem>
           ))}
         </List>
-        <Typography variant='p' sx={{fontWeight: 'bolder', padding: '16px 16px 0px 16px', color: theme.palette.text.primary}}>Other</Typography>
-        <List>
+        <Typography variant='p' sx={{fontWeight: 'bolder', padding: '16px 16px 0px 24px', color: theme.palette.text.primary}}>Other</Typography>
+        <List sx={{mx: '16px' }}>
           {otherMenuData.map((val, key) => (
             <ListItem key={key} disablePadding>
-              <ListItemButton selected={selectedPath === val.path}
+              <ListItemButton selected={selectedPath === val.path} sx={{borderRadius: '6px'}}
                   onClick={(event) => handleListItemClick(event, val.path)}>
                 <ListItemIcon sx={{color: selectedPath === val.path ? theme.palette.primary.main : ''}}>
                   {val.icon}
