@@ -9,6 +9,7 @@ import './App.css';
 import Content from './components/Content'
 import SideBar from './components/SideBar';
 import Header from './components/Header';
+import { drawerWidth } from './constants';
 
 const theme = createTheme({
   palette: {
@@ -30,8 +31,8 @@ function App() {
         <SideBar/>
         <Container component="main"
           sx={{ 
-            width: `calc(100% - ${290}px)`, 
-            ml: `${290 + 24}px`, 
+            width: `calc(100% - ${drawerWidth}px)`, 
+            ml: `${drawerWidth + 24}px`, 
             mt: '16px',
             mr: '32px',
             borderRadius: '8px', 
