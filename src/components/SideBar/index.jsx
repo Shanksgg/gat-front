@@ -18,12 +18,12 @@ export default function SideBar() {
   const theme = useTheme();
   const [selectedPath, setselectedPath] = useState('/');
 
-  const handleListItemClick = (index) => {
-    setselectedPath(index);
+  const handleListItemClick = (path) => {
+    setselectedPath(path);
   };
 
   let navigate = useNavigate(); 
-  const routeChange = (path) =>{ 
+  const handleRouteChange = (path) =>{ 
     navigate(path);
   }
 
@@ -48,7 +48,8 @@ export default function SideBar() {
           padding: '1.5rem 16px', 
           color: theme.palette.primary.main,
           fontSize: '32px',
-          }}>GAT</Typography>
+          }}>GAT
+      </Typography>
       <Typography variant='p' sx={{fontWeight: 'bolder', padding: '0px 24px', color: theme.palette.text.primary}}>Menu</Typography>
       <List sx={{mx: '16px' }}>
         {mainMenuData.map((val, key) => (
@@ -56,7 +57,7 @@ export default function SideBar() {
             <ListItemButton selected={selectedPath === val.path} sx={{borderRadius: '6px'}}
                 onClick={() => {
                   handleListItemClick(val.path);
-                  routeChange(val.path);
+                  handleRouteChange(val.path);
                 }}>
               <ListItemIcon sx={{color: selectedPath === val.path ? theme.palette.primary.main : ''}}>
                 {val.icon}
@@ -66,6 +67,7 @@ export default function SideBar() {
           </ListItem>
         ))}
       </List>
+
       <Typography variant='p' sx={{fontWeight: 'bolder', padding: '16px 16px 0px 24px', color: theme.palette.text.primary}}>Other</Typography>
       <List sx={{mx: '16px' }}>
         {otherMenuData.map((val, key) => (
@@ -73,7 +75,7 @@ export default function SideBar() {
             <ListItemButton selected={selectedPath === val.path} sx={{borderRadius: '6px'}}
                 onClick={() => {
                   handleListItemClick(val.path);
-                  routeChange(val.path);
+                  handleRouteChange(val.path);
                 }}>
               <ListItemIcon sx={{color: selectedPath === val.path ? theme.palette.primary.main : ''}}>
                 {val.icon}

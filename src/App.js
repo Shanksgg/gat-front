@@ -13,6 +13,9 @@ import { drawerWidth } from './constants';
 
 const theme = createTheme({
   palette: {
+    primary: {
+      main: '#ff00ff',
+    },
     text: {
       primary: '#42526E',
       disabled: '#7F8898'
